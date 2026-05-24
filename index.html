@@ -1,63 +1,11 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>วาดรูปหัวใจด้วย HTML และ CSS</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f2f5;
-            margin: 0;
-        }
-
-        .heart {
-            position: relative;
-            width: 100px;
-            height: 90px;
-            background-color: #ff4757;
-            transform: rotate(-45deg);
-            animation: beat 1s infinite alternate;
-        }
-
-        /* สร้างครึ่งวงกลมด้านซ้าย */
-        .heart::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100px;
-            height: 100px;
-            background-color: #ff4757;
-            border-radius: 50%;
-        }
-
-        /* สร้างครึ่งวงกลมด้านขวา */
-        .heart::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50px;
-            width: 100px;
-            height: 100px;
-            background-color: #ff4757;
-            border-radius: 50%;
-        }
-
-        /* เอฟเฟกต์หัวใจเต้น (ไม่ใส่ก็ได้) */
-        @keyframes beat {
-            to {
-                transform: scale(1.15) rotate(-45deg);
-            }
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-
-    <div class="heart"></div>
-
+    <h1 style="font-size: 10em; text-align: center; color: #ffc3c3; -webkit-text-stroke: 4px #000000;">อยากเล่นเกมด้วย</h1>
 </body>
 </html>

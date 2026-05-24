@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-500px) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .floating-emoji {
+            position: fixed;
+            font-size: 4em;
+            animation: floatUp 3s ease-out forwards;
+            pointer-events: none;
+            left: 50%;
+            bottom: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
 </head>
 <body>
     <h1 style="font-size: 10em; text-align: center; color: #ffc3c3; -webkit-text-stroke: 4px #000000;">อยากเล่นเกมด้วย</h1>
+
+    <script>
+        function createFloatingEmoji() {
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = '😑';
+            emoji.style.left = (Math.random() * 80 + 10) + '%';
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 3000);
+        }
+
+        window.addEventListener('load', () => {
+            // สร้างอิโมจิหลายตัวจากจุดต่างๆ
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    createFloatingEmoji();
+                }, i * 200);
+            }
+        });
+    </script>
 </body>
 </html>
